@@ -22,9 +22,14 @@ Comment.init(
         model: 'User',
         key: 'id'
       }
+    }
   },
   {
-    sequelize
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'Comment'
   }
 );
 
