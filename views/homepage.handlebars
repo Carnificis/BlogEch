@@ -9,7 +9,6 @@
     </tr>
   </thead>
   <tbody>
-    {{#if loggedIn }}
 {{#each posts as |post| }}
     <tr>
       <th scope="row">1</th>
@@ -19,7 +18,7 @@
     </tr>
     
 {{/each}}
-{{else}} Not logged in <a href="/login">Login Page</a>
-{{/if}}
+
+
   </tbody>
 </table>

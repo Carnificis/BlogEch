@@ -10,4 +10,25 @@ router.get('/', (req, res)=> {
 
 });
 
+
+router.get('/login', (req, res)=> {
+
+    //res.render('homepage')
+    res.render('signup', {
+        logged_in: req.session.logged_in
+    })
+
+});
+
+router.get('/logout', (req, res) => {
+    if (req.session.logged_in) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    } else {
+      res.redirect('/');
+    }
+  });
+
+
 module.exports = router;
