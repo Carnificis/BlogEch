@@ -49,6 +49,7 @@ router.get("/profile", withAuth, async (req, res) => {
   }
 });
 
+
 router.get("/", async (req, res) => {
   try {
     // // Get all Posts and JOIN with user data

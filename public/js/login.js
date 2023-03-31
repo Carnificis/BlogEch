@@ -14,7 +14,7 @@ const loginFormHandler = async (event) => {
     })
 
     .then(function() {
-  document.location.replace("/dashboard");
+  document.location.replace("/profile");
   })
  .catch(err => console.log(err));
     if (response.ok) {
