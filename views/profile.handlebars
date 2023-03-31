@@ -2,10 +2,10 @@
 {{#each post in posts}}
 <div class="card text-center">
   <div class="card-header">
-    Featured
+    {post.title}
   </div>
   <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
+    <h5 class="card-title">P\{post.body}</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
     <a href="#" class="btn btn-primary">Comment</a>
   </div>
@@ -14,3 +14,4 @@
   </div>
 </div>
 {{/each}}
+<h3>Test</h3>

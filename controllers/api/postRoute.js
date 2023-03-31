@@ -5,13 +5,12 @@ router.post('/', async (req, res) => {
   try {
     const postData = await Post.create(req.body);
 
-    req.session.save(() => {
-      req.session.Post_id = postData.id;
-      req.session.logged_in = true;
-
+    
+      console.log(postData);
       res.status(200).json(postData);
-    });
+    
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 })
