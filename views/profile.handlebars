@@ -1,11 +1,11 @@
 <h2>Top trending Post</h2>
-{{!-- {{#each post in posts}}
+{{#each post in posts}}
 <div class="card text-center">
   <div class="card-header">
     {post.title}
   </div>
   <div class="card-body">
-    <h5 class="card-title">P\{post.body}</h5>
+    <h5 class="card-title">{post.body}</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
     <a href="#" class="btn btn-primary">Comment</a>
   </div>
@@ -13,5 +13,18 @@
     2 days ago
   </div>
 </div>
-{{/each}} --}}
-<h3>Test</h3>
+{{/each}}
+<form class="add_post">
+  <div class="mb-3">
+    <label for="exampleInputText" class="form-label">Title</label>
+    <input type="text" class="form-control" id="title" aria-describedby="text">
+  </div>
+  <div class="mb-3">
+    <label for="body" class="form-label">Body</label>
+    <input type="text" class="form-control" id="body" aria-describedby="body">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Add Post</button>
+</form>
+
+<script src="/js/profile.js"></script>

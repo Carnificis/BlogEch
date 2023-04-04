@@ -1,23 +1,22 @@
-const newFormHandler = async (event) => {
+const addPostHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#project-name').value.trim();
-  const needed_funding = document.querySelector('#project-funding').value.trim();
-  const description = document.querySelector('#project-desc').value.trim();
+  const title = document.querySelector('#title').value.trim();
+  const body = document.querySelector('#body').value.trim();
 
-  if (name && needed_funding && description) {
+  if (title && body) {
     const response = await fetch(`/api/projects`, {
       method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
+      body: JSON.stringify({ title, body }),
       headers: {
         'Content-Type': 'application/json',
       },
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      window.location.reload();
     } else {
-      alert('Failed to create project');
+      alert('Failed to create post');
     }
   }
 };
@@ -43,5 +42,5 @@ document
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.project-list')
-  .addEventListener('click', delButtonHandler);
+  .querySelector('.add-post')
+  .addEventListener('click', addPostHandler);
