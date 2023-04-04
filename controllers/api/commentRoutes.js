@@ -51,7 +51,7 @@ router.delete('/:id', async (req, res) => {
 });
 router.get("/:id", async (req, res) => {
   try {
-    const comment = await Comment.(req.params.id);
+    const comment = await Comment(req.params.id);
     if (!comment) {
       return res.status(404).json({ message: "Comment not found" });
     }
